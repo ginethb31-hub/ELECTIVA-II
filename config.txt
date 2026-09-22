@@ -1,0 +1,49 @@
+1.- pip install virtualenv
+
+-->creacion de entorno virtual
+2.- python -m venv myvenv
+
+--si el entorno se ejecuta incompleto, se coloca
+
+Remove-Item -Recurse -Force .\myvenv
+
+--luego se crea otra vez con
+
+python -m venv myvenv
+
+--se activaria con
+.\myvenv\Scripts\Activate.ps1
+
+
+
+ 3.- --> acceder al entorno
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+cd myvenv 
+cd .\Scripts\ 
+.\activate
+
+
+cd..
+cd..
+cd app
+
+--> librerias
+
+pip install psycopg2-binary
+pip install mysql-connector-python
+
+pip install pymysql
+
+
+--verificar si tiene uvicorn
+
+uvicorn app.main:app --reload
+
+--> instalar fast api
+pip install "fastapi[standard]"
+
+
+--ejecuta la api
+uvicorn main:app --reload
+
+-fastapi dev main.py
